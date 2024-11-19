@@ -39,6 +39,8 @@
     ],
     "postStartCommand": "./my-project/bcleaninstall",
     "mounts": [
+        // make WSL2 simlinks work
+        "source=/mnt/c,target=/mnt/c,type=bind",
         // repo's and credentials
         "source=${localEnv:HOME}/.sbt,target=/home/vscode/.sbt,type=bind",
         "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind",
