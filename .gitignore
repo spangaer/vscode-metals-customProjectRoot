@@ -1,0 +1,9 @@
+#genaral
+target/
+
+#scala/java
+.metals/
+.bloop
+.metals
+.bsp
+*.class

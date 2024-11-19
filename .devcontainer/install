@@ -1,0 +1,12 @@
+#!/bin/bash -e
+# coursier + scala + bloop install
+
+# make dir
+mkdir -p ~/.local/share/coursier/bin
+cd ~/.local/share/coursier/bin
+
+# install
+curl -fLo coursier https://github.com/coursier/launchers/raw/master/coursier
+chmod +x coursier
+./coursier setup -y
+./coursier install bloop

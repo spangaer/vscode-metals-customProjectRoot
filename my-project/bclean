@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pushd "$(dirname "$0")"
+
+rm -rf ../.metals
+rm -rf .bloop/
+rm -rf .bsp/
+rm -rf target/
+rm -rf project/.bloop/
+rm -rf project/target/
+rm -rf project/project/target/
+rm -rf project/project/project/
+
+popd

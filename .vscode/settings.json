@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.watcherExclude": {
+    "**/target": true
+  },
+  "editor.tabSize": 2,
+  "metals.bloopSbtAlreadyInstalled": true,
+  "metals.customProjectRoot": "my-project/",
+}

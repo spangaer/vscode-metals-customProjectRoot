@@ -1,0 +1,48 @@
+{
+    "name": "vscode-metals-customProjectRoot",
+    // "image": "mcr.microsoft.com/devcontainers/rust:1-1-bookworm",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "scalameta.metals",
+                "scala-lang.scala",
+                "eamodio.gitlens"
+            ],
+            "settings": {
+                "metals.javaHome": "/usr/local/sdkman/candidates/java/current",
+                "java.configuration.runtimes": [
+                    {
+                        "path": "/usr/local/sdkman/candidates/java/current",
+                        "name": "JavaSE-21",
+                        "default": true
+                    }
+                ]
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "jdkDistro": "tem",
+            "installMaven": true
+        },
+        "ghcr.io/devcontainers-contrib/features/bash-command:1": {
+            "command": "su -c /unmanaged/install vscode"
+        }
+    },
+    "overrideFeatureInstallOrder": [
+        "ghcr.io/devcontainers/features/java",
+        "ghcr.io/devcontainers-contrib/features/bash-command"
+    ],
+    "postStartCommand": "./my-project/bcleaninstall",
+    "mounts": [
+        // repo's and credentials
+        "source=${localEnv:HOME}/.sbt,target=/home/vscode/.sbt,type=bind",
+        "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind",
+        "source=${localEnv:HOME}/.ivy2,target=/home/vscode/.ivy2,type=bind",
+        "source=${localEnv:HOME}/.cache/coursier/v1,target=/home/vscode/.cache/coursier/v1,type=bind"
+    ]
+}
