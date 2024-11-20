@@ -1,8 +1,15 @@
 #!/bin/bash -e
 
+workspace=vscode-metals-customProjectRoot
+
 pushd "$(dirname "$0")"
 
 ./bclean
+
+# fix bloop for metals
+echo "Global / bloopConfigDir := file(\"/workspaces/$workspace/.bloop\")" > bloop.sbt
+echo "addSbtPlugin(\"ch.epfl.scala\" % \"sbt-bloop\" % \"2.0.5\")" > project/bloop.sbt
+
 sbt bloopInstall
 
 popd

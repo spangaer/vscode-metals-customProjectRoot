@@ -2,7 +2,10 @@
 
 pushd "$(dirname "$0")"
 
-rm -rf ../.metals
+rm -rf ../.metals/
+rm -rf ../.bloop/
+rm -rf ../.bsp/
+rm -rf .metals/
 rm -rf .bloop/
 rm -rf .bsp/
 rm -rf target/
@@ -10,5 +13,7 @@ rm -rf project/.bloop/
 rm -rf project/target/
 rm -rf project/project/target/
 rm -rf project/project/project/
+rm -rf bloop.sbt
+rm -rf project/bloop.sbt
 
 popd
