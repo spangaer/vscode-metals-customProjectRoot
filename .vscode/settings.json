@@ -7,6 +7,7 @@
   },
   "editor.tabSize": 2,
   "metals.bloopSbtAlreadyInstalled": true,
-  "metals.scalafmtConfigPath": "my-project/.scalafmt.conf"
-  // "metals.customProjectRoot": "my-project",
+  "metals.customProjectRoot": "my-project",
+  "metals.scalafmtConfigPath": "my-project/.scalafmt.conf",
+  "metals.serverVersion": "1.4.2-SNAPSHOT",
 }
